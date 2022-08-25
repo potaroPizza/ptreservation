@@ -12,8 +12,10 @@
     <title>Main</title>
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/fix/header.jsp"></jsp:include>
   <a href="<c:url value='/pass/buy'/>">이용권 구매</a>
   <a href="<c:url value='/pt/reserve'/>">PT 예약</a>
+  <a href="<c:url value='/locker/reserve'/>">사물함 예약</a>
   <a href="<c:url value='/user/mypage'/>">마이페이지</a>
   <a href="<c:url value='/charts'/>">통계</a>
 </body>

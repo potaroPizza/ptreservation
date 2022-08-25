@@ -1,4 +1,4 @@
-package com.example.ptreservation.user.controller;
+package com.example.ptreservation.users.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

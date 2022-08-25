@@ -9,7 +9,7 @@ public class TestController {
     @GetMapping("/hello")
     public String hello() {
         System.out.println("제발 한글");
-        return "hello";
+        return "common/hello";
     }
 
 }
