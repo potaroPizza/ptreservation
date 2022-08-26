@@ -24,9 +24,16 @@ public class UserController {
     }
     
     @GetMapping("/join")
-    public String join() {
+    public String joinPage() {
         System.out.println("회원가입 페이지");
 
         return "/join";
+    }
+
+    @PostMapping("/join")
+    public String join() {
+        System.out.println("회원가입 처리");
+
+        return "/index";
     }
 }

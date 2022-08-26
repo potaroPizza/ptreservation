@@ -12,14 +12,23 @@
     <title>PT 예약 서비스</title>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/views/fix/header.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/views/fix/header.jsp"></jsp:include>
 
-    <form action="<c:url value='/user/login'/>">
-        ID &nbsp : <input type="text" name="id"/><br/>
-        PW : <input type="password" name="pw"/><br/><br/>
-        <input type="submit" value="로그인"/>
-        <button onclick="location.href='<c:url value="/user/join"/>'">회원가입</button>
-    </form>
+<form action="<c:url value='/user/login'/>">
+    ID &nbsp : <input type="text" name="id"/><br/>
+    PW : <input type="password" name="pw"/><br/><br/>
+    <input type="submit" value="로그인"/>
+</form>
+    <button onclick="location.href='<c:url value="/user/adminLogin"/>'">관리자 로그인</button>
+    <button onclick="location.href='<c:url value="/user/join"/>'">회원가입</button>
+
+<p>
+    DB연결 테스트 :
+    <c:forEach var="vo" items="${list}" varStatus="status">
+        ${vo.name}
+        <c:if test="${!status.last}">, </c:if>
+    </c:forEach>
+</p>
 
 </body>
 </html>
