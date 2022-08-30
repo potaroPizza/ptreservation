@@ -3,7 +3,33 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.ptreservation.users.model.UsersDAO">
-    <select id="selectAll" resultType="UsersCategoryVO">
-        select * from users_category
+    <!-- 유저 구분코드 모두 가져오기 -->
+    <select id="selectAllUsersCategory" resultType="UsersCategoryVO">
+        select *
+        from users_category
     </select>
+
+    <!-- 아이디 중복검사 -->
+    <select id="chkIdDup" parameterType="String" resultType="int">
+        select count(*)
+        from users
+        where id = #{id};
+    </select>
+
+    <!-- 회원가입 처리 -->
+    <insert id="insertUsers" parameterType="UsersVO">
+        insert into users(name, id, pw, hp, users_category_code)
+        values(#{name}, #{id}, #{pw}, #{hp}, #{usersCategoryCode});
+    </insert>
+
+    <!-- 일반회원, 트레이너 로그인 -->
+    <select id="selectPw" parameterType="String" resultType="String">
+        select pw
+        from users
+        where id = #{id} and outdate is null
+    </select>
+
+    <!-- 아이디 기반으로 정보 조회 -->
+
+
 </mapper>

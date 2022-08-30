@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class UsersCategoryVO {
-    public int no;
-    public String code;
-    public String name;
+    private int no;
+    private String code;
+    private String name;
 }

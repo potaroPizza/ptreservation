@@ -17,9 +17,9 @@ public class PtReservationController {
 
     @RequestMapping("/")
     public String home(Model model) {
-        System.out.println("예약 홈페이지");
+        System.out.println("예약 홈페이지 첫 화면");
 
-        List<UsersCategoryVO> list = usersService.selectAll();
+        List<UsersCategoryVO> list = usersService.selectAllUsersCategory();
 
         model.addAttribute("list", list);
 

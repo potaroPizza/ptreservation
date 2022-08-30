@@ -6,5 +6,8 @@ import java.util.List;
 
 @Mapper
 public interface UsersDAO {
-    List<UsersCategoryVO> selectAll();
+    List<UsersCategoryVO> selectAllUsersCategory();
+    int chkIdDup(String id);
+    int insertUsers(UsersVO vo);
+    String selectPw(String id);
 }
